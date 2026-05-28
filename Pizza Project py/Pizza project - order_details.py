@@ -1,16 +1,9 @@
 import pandas as pd
-import pypyodbc as odbc
 import numpy as np
 import matplotlib as plt
 from db_connection import get_connection
 
-# connection = odbc.connect(
-#     'DRIVER={ODBC Driver 17 for SQL Server};'
-#     'SERVER=Local host;'
-#     'DATABASE=Pizza Project;'
-#     'Trusted_Connection=yes;')
-
-
+connection = get_connection()
 
 sum_orders = pd.read_sql("SELECT SUM(quantity) FROM order_details GROUP BY order_id", connection)
 sum_total_price = pd.read_sql("SELECT SUM(total_price) FROM order_details GROUP BY order_id",connection)

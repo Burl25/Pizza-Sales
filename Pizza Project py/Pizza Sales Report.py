@@ -1,14 +1,10 @@
 import pandas as pd
-import pypyodbc as odbc
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+from db_connection import get_connection
 
-connection = odbc.connect(
-    'DRIVER={ODBC Driver 17 for SQL Server};'
-    'SERVER=Local host;'
-    'DATABASE=Pizza Project;'
-    'Trusted_Connection=yes;')
+connection = get_connection()
 
 # Total revenue per month
 total_revenue = pd.read_sql("SELECT DATEPART(MONTH, order_date) AS month_number, DATENAME(MONTH,order_date) AS month_name, SUM(total_price) AS total_revenue FROM orders o JOIN order_details od ON o.order_id = od.order_id GROUP BY DATENAME(MONTH,order_date), DATEPART(MONTH, order_date) ORDER BY DATEPART(MONTH, order_date)", connection)

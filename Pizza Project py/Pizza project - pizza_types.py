@@ -1,13 +1,9 @@
 import pandas as pd
-import pypyodbc as odbc
 import numpy as np
 import matplotlib as plt
+from db_connection import get_connection
 
-connection = odbc.connect(
-    'DRIVER={ODBC Driver 17 for SQL Server};'
-    'SERVER=Local host;'
-    'DATABASE=Pizza Project;'
-    'Trusted_Connection=yes;')
+connection = get_connection()
 
 df_pizza_types = pd.read_sql("SELECT * FROM pizza_types", connection)
 pizza_categories = pd.read_sql("SELECT pizza_category, COUNT (pizza_category) AS number_of_pizzas FROM pizza_types GROUP BY pizza_category", connection)

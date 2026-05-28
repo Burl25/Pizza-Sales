@@ -1,25 +1,10 @@
 import pandas as pd
-import pypyodbc as odbc
 import numpy as np
 import matplotlib.pyplot as plt
 import calendar
+from db_connection import get_connection
 
-connection = odbc.connect(
-    'DRIVER={ODBC Driver 17 for SQL Server};'
-    'SERVER=Local host;'
-    'DATABASE=Pizza Project;'
-    'Trusted_Connection=yes;')
-
-# Read data with cursor
-
-# cursor = connection.cursor()
-# cursor.execute("SELECT * FROM orders")
-# rows = cursor.fetchall()
-# for row in rows:
-#     print(row)
-# connection.close()
-
-# Read data directly with pandas
+connection = get_connection()
 
 df_orders = pd.read_sql("SELECT * FROM orders", connection)
 
