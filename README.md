@@ -41,7 +41,9 @@ Power BI Dashboard - Dashboard created in Power BI for business intelligence and
 - Product Performance (Top selling pizzas, Worst performing pizzas, Revenue by category, Revenue by size)
 - Sales Trends (Orders by hour, Orders by month, Peak order periods, Seasonality analysis)
 
-Project Structure:
+## Project Structure
+
+```text
 Pizza Sales/
 │
 ├── Pizza Project sql/
@@ -56,17 +58,18 @@ Pizza Sales/
 │   ├── Pizza project - pizza_types.py
 │   ├── Pizza project - pizzas.py
 │   ├── Pizza Sales Report.py
-│   ├── Graphs
+│   ├── Graphs/
 │
 ├── Power BI Project Theme/
 │   ├── gradient.png
 │   ├── Pizza Sales Theme.json
 │
 ├── Pizza Sales Dashboard.pbix
-│
 ├── pizza_sales.csv
-|
+│
 └── README.md
+```
+
 
 Author:
 Ioana Burlaciuc
