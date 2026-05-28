@@ -18,9 +18,9 @@ SQL Component - Creation of tables and overview of the data.
 - Proper relationships between tables
 - Data Processing
 - Data cleaning and transformation
-- Analytical queries for business insights (Revenue Summary, Every pizza total revenue, Sales level for every pizza, Revenue based on pizza category summary, Numbers of orders, Most popular pizzas to least, Number of orders at every hour, Number of orders every month, Total revenue based on month, Best-selling pizza by month, Peak sales days, Best to least profitable sizes
-- Stored procedures for reusable analysis (Procedure that shows a daily sales report based on the period of time selected, Procedure that shows monthly sales report by category, Procedure that shows top N pizzas based on total revenue from a given date, Procedure that shows worst-selling pizzas based on quantity in a given month) 
-- User-defined functions (Function that shows total revenue of an order, Function that shows total revenue by date, Function that shows total number of pizzas based on sizes, Function for a possible discount
+- Analytical queries for business insights (Revenue Summary, Every pizza total revenue, Sales level for every pizza, Revenue based on pizza category summary, Numbers of orders, Most popular pizzas to least, Number of orders at every hour, Number of orders every month, Total revenue based on month, Best-selling pizza by month, Peak sales days, Best to least profitable sizes)
+- Stored procedures for reusable analysis (Daily sales report based on the period of time selected, Monthly sales report by category, Top N pizzas based on total revenue from a given date, Worst-selling pizzas based on quantity in a given month) 
+- User-defined functions (Total revenue of an order, Total revenue by date, Total number of pizzas based on sizes, Possible discount)
 
 Python Component - Python is used to connect to SQL Server and perform further analysis.
 
@@ -45,29 +45,32 @@ Project Structure:
 Pizza Sales/
 │
 ├── Pizza Project sql/
-│   ├── create_tables.sql
-│   ├── stored_procedures.sql
-│   ├── analysis_queries.sql
+│   ├── Data Analysis.sql
+│   ├── Data Import.sql
+│   ├── Function and Procedures.sql
 │
 ├── Pizza Project py/
 │   ├── db_connection.py
-│   ├── sales_analysis.py
-│   ├── reports.py
-│   ├── visualizations.py
+│   ├── Pizza project - order_details.py
+│   ├── Pizza project - orders.py
+│   ├── Pizza project - pizza_types.py
+│   ├── Pizza project - pizzas.py
+│   ├── Pizza Sales Report.py
+│   ├── Graphs
 │
-├── powerbi/
-│   ├── pizza_sales_dashboard.pbix
+├── Power BI Project Theme/
+│   ├── gradient.png
+│   ├── Pizza Sales Theme.json
 │
-├── data/
-│   └── (optional exports / CSVs)
+├── Pizza Sales Dashboard.pbix
 │
+├── pizza_sales.csv
+|
 └── README.md
 
-Author
-
+Author:
 Ioana Burlaciuc
 GitHub: https://github.com/Burl25
 
-License
-
+License:
 This project is for educational and portfolio purposes.
